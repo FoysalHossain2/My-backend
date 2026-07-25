@@ -6,8 +6,21 @@ dotenv.config({
     path: './env'
 })
 
-connectDB();
 
+connectDB()
+.than(() => {
+    app.lication.listen(process.env.PORT || 8000, () => {
+        console.log(`Server is runnig at port: ${process.env.PORT}`);
+        app.on("error", (error) => {
+        console.log("ERROR: ", error);
+        throw error
+       })
+    })
+})
+.catch((err) => {
+    console.log("MONGO db connection failed !!! ", err);
+    
+})
 
 
 
