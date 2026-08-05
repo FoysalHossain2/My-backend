@@ -6,7 +6,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 
 const registerUser = asyncHandler(async (req, res) => {    
     //get user details from frontend
-    //validation - not emty
+    //validation - not empty
     // check if user alredy: username, email
     // check for images, check for avatar
     //upload them to cloudinary, avatar
@@ -56,7 +56,7 @@ const registerUser = asyncHandler(async (req, res) => {
     })
 
     const createdUser = await User.findById(user._id).select(
-        "-pasword -refershToken"
+        "-password -refershToken"
     )
 
     if(!createdUser) {
