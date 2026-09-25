@@ -26,8 +26,8 @@ const generateAccessAndRefereshTokens = async (userId) => {
 const registerUser = asyncHandler(async (req, res) => {    
     //get user details from frontend
     //validation - not empty
-    // check if user alredy: username, email
-    // check for images, check for avatar
+    //check if user alredy: username, email
+    //check for images, check for avatar
     //upload them to cloudinary, avatar
     // create user object - create entry in db
     //remove password from token field from response
@@ -35,7 +35,7 @@ const registerUser = asyncHandler(async (req, res) => {
     // return res
 
     const { fullname, email, username, password } = req.body;
-    console.log("REQ BODY:", req.body);
+    //console.log("REQ BODY:", req.body);
 
     if (
         [fullname, email, username, password].some(
